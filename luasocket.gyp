@@ -32,12 +32,12 @@
       'direct_dependent_settings': {
       },
       'copies': [
-        { 'destination': '<(PRODUCT_DIR)/lua',
+        { 'destination': '<(PRODUCT_DIR)',
           'files': [
             'src/ltn12.lua',
             'src/socket.lua'
         ]},
-        { 'destination': '<(PRODUCT_DIR)/lua/socket',
+        { 'destination': '<(PRODUCT_DIR)/socket',
           'files': [
             'src/ftp.lua',
             'src/http.lua',
@@ -79,7 +79,7 @@
         '<(DEPTH)/third_party/lua/lua.gyp:liblua'
       ],
       'copies': [
-        { 'destination': '<(PRODUCT_DIR)/lua',
+        { 'destination': '<(PRODUCT_DIR)',
           'files': [
             'src/mime.lua',
           ]
