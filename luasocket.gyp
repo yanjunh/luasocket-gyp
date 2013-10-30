@@ -7,8 +7,7 @@
     {
       'target_name': 'luasocket',
       'type': 'shared_library',
-      'product_dir': "<(PRODUCT_DIR)/socket",
-      'product_name': 'core',
+      'product_name': 'socket',
       'sources': [
         'src/luasocket.c',
         'src/timeout.c',
@@ -66,8 +65,7 @@
     {
       'target_name': 'luamime',
       'type': 'shared_library',
-      'product_dir': "<(PRODUCT_DIR)/mime",
-      'product_name': 'core',
+      'product_name': 'mime',
       'sources': [
         'src/mime.c',
       ],
