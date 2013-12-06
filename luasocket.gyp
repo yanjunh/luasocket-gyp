@@ -7,6 +7,7 @@
     {
       'target_name': 'luasocket',
       'type': 'shared_library',
+      'product_dir': "<(PRODUCT_DIR)",
       'product_name': 'socket',
       'sources': [
         'src/luasocket.c',
@@ -47,6 +48,8 @@
       ],  
       'conditions': [
         ['OS!="win"', {
+          'product_prefix': '',
+          'cflags!': ['-fvisibility=hidden'],
           'sources': [
             'src/usocket.c'
           ],
@@ -65,6 +68,7 @@
     {
       'target_name': 'luamime',
       'type': 'shared_library',
+      'product_dir': "<(PRODUCT_DIR)",
       'product_name': 'mime',
       'sources': [
         'src/mime.c',
@@ -85,6 +89,8 @@
       ],
       'conditions': [
         ['OS!="win"', {
+          'product_prefix': '',
+          'cflags!': ['-fvisibility=hidden'],
         }, {
           'defines': [
             '_USRDLL',
