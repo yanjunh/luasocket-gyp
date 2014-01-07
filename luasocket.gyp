@@ -47,13 +47,24 @@
         ]},
       ],  
       'conditions': [
-        ['OS!="win"', {
+        ['OS=="linux"', {
           'product_prefix': '',
           'cflags!': ['-fvisibility=hidden'],
           'sources': [
             'src/usocket.c'
           ],
-        }, {
+        }],
+        ['OS == "mac"', {
+          'product_prefix': '',
+          'product_extension': 'so',
+          'xcode_settings': {
+            'GCC_SYMBOLS_PRIVATE_EXTERN': 'NO',
+          },
+          'sources': [
+            'src/usocket.c'
+          ],
+        }],
+        ['OS=="win"', {
           'defines': [
             '_USRDLL',
             'LUASOCKET_EXPORTS',
@@ -88,10 +99,18 @@
         }
       ],
       'conditions': [
-        ['OS!="win"', {
+        ['OS=="linux"', {
           'product_prefix': '',
           'cflags!': ['-fvisibility=hidden'],
-        }, {
+        }],
+        ['OS == "mac"', {
+          'product_prefix': '',
+          'product_extension': 'so',
+          'xcode_settings': {
+            'GCC_SYMBOLS_PRIVATE_EXTERN': 'NO',
+          },
+        }],
+        ['OS=="win"', {
           'defines': [
             '_USRDLL',
             'MIME_EXPORTS',
